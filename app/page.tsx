@@ -12,8 +12,6 @@ async function getCartData() {
 
 export default async function Home() {
   const pricingPlans = await getCartData();
-  console.log("Main price is: ", pricingPlans);
-
   return (
     <div className="max-w-6xl mx-auto px-2 sm:px-12">
       <main className="mt-12">
@@ -29,7 +27,7 @@ export default async function Home() {
             different customer needs and business scales.
           </p>
         </div>
-        <ChoosePlans plan={pricingPlans} />
+        <ChoosePlans />
 
         <div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-y-12 place-items-center gap-x-6 my-12">
@@ -78,6 +76,7 @@ export default async function Home() {
                         {plan.features.map((feature: any) => {
                           return (
                             <li
+                              key={feature}
                               className={`${
                                 plan.name === "Premium Plan"
                                   ? "text-black"

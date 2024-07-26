@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-function ChoosePlans({ pricingPlans }) {
+function ChoosePlans() {
 
   const [monthly, setMonthly] = useState(true);
   const [yearly, setyearly] = useState(false);
